@@ -1,0 +1,14 @@
+# Usage: pip install -r requirements.txt
+
+line-bot-sdk
+bs4
+flask
+gunicorn
+requests
+twder
+twstock
+pymongo
+datetime
+numpy
+pandas
+matplotlib
