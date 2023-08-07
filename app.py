@@ -44,7 +44,7 @@ def handle_message(event):
             "emojiId": "021"
         },
         {
-            "index": 17,
+            "index": 15,
             "productId": "5ac21e6c040ab15980c9b444",
             "emojiId": "022"
         }
@@ -52,7 +52,7 @@ def handle_message(event):
     text_message = TextSendMessage(text=
 '''
 $ Master Finance $
-Hello！您好，歡迎您成為 Master Finance 的好友
+Hello!約嗎?
 ''', emoji=emoji)
 
     sticker_message = StickerMessage(
