@@ -53,7 +53,8 @@ def handle_message(event):
 '''
 $ Master Finance $
 Hello!約嗎?
-''', emoji=emoji)
+'''.split("\n")
+, emoji=emoji)
 
     sticker_message = StickerMessage(
         package_id="8522",
