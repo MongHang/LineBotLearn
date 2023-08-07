@@ -1,8 +1,6 @@
 # LineBot所需套件
-from flask import Flask, request, abort
-from linebot import (LineBotApi, WebhookHandler, exceptions)
-from linebot.exceptions import (InvalidSignatureError)
-from linebot.models import *
+from line_bar_api import *
+from events.basic import *
 
 app = Flask(__name__)
 
@@ -37,33 +35,10 @@ def handle_message(event):
     # message = TextSendMessage(text=event.message.text)
     # line_bot_api.reply_message(event.reply_token, message)
 
-    emoji = [
-        {
-            "index": 0,
-            "productId": "5ac21e6c040ab15980c9b444",
-            "emojiId": "021"
-        },
-        {
-            "index": 15,
-            "productId": "5ac21e6c040ab15980c9b444",
-            "emojiId": "022"
-        }
-    ]
-    text_message = TextSendMessage(text=
-'''
-$ Master Finance $
-Hello!約嗎?
-'''.split("\n")
-, emoji=emoji)
+    message_text = str(event.message.text).lower()
 
-    sticker_message = StickerMessage(
-        package_id="8522",
-        sticker_id="16581271"
-    )
-    line_bot_api.reply_message(
-        event.reply_token,
-        [text_message, sticker_message]
-    )
+    if message_text == "@使用說明":
+        about_ius_event(event)
 
 
 if __name__ == "__main__":
