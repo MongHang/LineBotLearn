@@ -33,8 +33,36 @@ def callback():
 # 處理訊息
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
-    line_bot_api.reply_message(event.reply_token, message)
+    # Test
+    # message = TextSendMessage(text=event.message.text)
+    # line_bot_api.reply_message(event.reply_token, message)
+
+    emoji = [
+        {
+            "index": 0,
+            "productId": "5ac21e6c040ab15980c9b444",
+            "emojiId": "021"
+        },
+        {
+            "index": 17,
+            "productId": "5ac21e6c040ab15980c9b444",
+            "emojiId": "022"
+        }
+    ]
+    text_message = TextSendMessage(text=
+'''
+$ Master Finance $
+Hello！您好，歡迎您成為 Master Finance 的好友
+''', emoji=emoji)
+
+    sticker_message = StickerMessage(
+        package_id="8522",
+        sticker_id="16581271"
+    )
+    line_bot_api.reply_message(
+        event.reply_token,
+        [text_message, sticker_message]
+    )
 
 
 if __name__ == "__main__":
