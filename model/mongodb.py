@@ -5,11 +5,11 @@ stockDB = "line_bot_usage"
 collection = "stock"
 
 
-def constructor_stock():
-    client = MongoClient(
-        "mongodb://av2288444:t0955787053S@ac-gbnruue-shard-00-00.kt0hhit.mongodb.net:27017,ac-gbnruue-shard-00-01.kt0hhit.mongodb.net:27017,ac-gbnruue-shard-00-02.kt0hhit.mongodb.net:27017/?ssl=true&replicaSet=atlas-r0k35s-shard-0&authSource=admin&retryWrites=true&w=majority")
-    db = client[stockDB]
-    return db
+#def constructor_stock():
+#    client = MongoClient(
+#        "mongodb://av2288444:t0955787053S@ac-gbnruue-shard-00-00.kt0hhit.mongodb.net:27017,ac-gbnruue-shard-00-01.kt0hhit.mongodb.net:27017,ac-gbnruue-shard-00-02.kt0hhit.mongodb.net:27017/?ssl=true&replicaSet=atlas-r0k35s-shard-0&authSource=admin&retryWrites=true&w=majority")
+#    db = client[stockDB]
+#    return db
 
 
 def update_my_stock(user_name, stockNumber, condition, target_price):
